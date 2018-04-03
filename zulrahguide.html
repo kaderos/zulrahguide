@@ -1,0 +1,224 @@
+<html>
+<head>
+	<style>
+		form {
+			margin-left: 87px;
+			margin-top: 8px;
+		}
+		body {
+			margin: 0px;
+			background-color: black;
+			font-family: 'Helvetica';
+		}
+		.page-holder {
+			background-image: url("new-background.png");
+			width: 455px;
+			margin-left: auto;
+			margin-right: auto;
+			color: white;
+		}
+		.zulrah-header-home {
+			padding-top: 20px;
+			color: #ce7f24;
+			font-family: initial;
+			font-size: 50px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			text-align: center;
+			text-shadow: 1px 1px 1px #000000;
+		}
+		.key {
+			background: black;
+			border: 2px solid #382418;
+			padding: 6px;
+			position: relative;
+			margin-bottom: 15px;
+			width: 168px;
+			top: 8px;
+			left: 48px;
+		}
+		.key-label {
+			position: relative;
+			display: inline-block;
+			top: -9px;
+			color: #90c040;
+		}
+		.phase {
+			padding: 7px;
+		}
+		.map-image {
+			width: 140px;
+			border: 2px solid #382418;
+			background-color: white;
+		}
+		.clickable:hover {
+			cursor: pointer;
+			background-color: rgb(150,150,150);
+			opacity: 0.8;
+		}
+		.reset-link {
+			padding: 11px;
+			text-align: center;
+			/*background-color: rgb(255,100,100);*/
+			background-image: url("reset-bkg.png");
+			color: white;
+		}
+		.reset-link:hover {
+			cursor: pointer;
+			color: rgb(255,0,0);
+		}
+		.intro {
+			color: black;
+			text-align: center;
+			padding-left: 15px;
+			padding-right: 15px;
+			background-image: url("intro-bkg.png");
+			height: 200px;
+		}
+		.intro-header {
+			margin-top: 10px;
+			font-weight: bold;
+			padding-top: 39px;
+		}
+		.hide-intro {
+			color: red;
+		}
+		.hide-intro:hover {
+			cursor: pointer;
+		}
+		.footer {
+			font-size: 12px;
+		}
+		.footer a:visited {
+			color: white;
+			text-decoration: none;
+		}
+	</style>
+
+	<script>
+	
+		function oneOrTwo() {
+			document.getElementById("phase-1").style.display = "none";
+			document.getElementById("phase-2").style.display = "none";
+			document.getElementById("phase-3").style.display = "block";
+			document.getElementById("phase-4").style.display = "block";
+		}
+		function one() {
+			document.getElementById("phase-3").style.display = "none";
+			document.getElementById("phase-4").style.display = "none";
+			document.getElementById("pattern-1").style.display = "block";
+		}
+		function two() {
+			document.getElementById("phase-3").style.display = "none";
+			document.getElementById("phase-4").style.display = "none";
+			document.getElementById("pattern-2").style.display = "block";
+		}
+		function three() {
+			document.getElementById("phase-1").style.display = "none";
+			document.getElementById("phase-2").style.display = "none";
+			document.getElementById("pattern-3").style.display = "block";
+		}
+		function four() {
+			document.getElementById("phase-1").style.display = "none";
+			document.getElementById("phase-2").style.display = "none";
+			document.getElementById("pattern-4").style.display = "block";
+		}
+		function reset() {
+			document.getElementById("pattern-1").style.display = "none";
+			document.getElementById("pattern-2").style.display = "none";
+			document.getElementById("pattern-3").style.display = "none";
+			document.getElementById("pattern-4").style.display = "none";
+			document.getElementById("phase-1").style.display = "block";
+			document.getElementById("phase-2").style.display = "block";
+			document.getElementById("phase-3").style.display = "none";
+			document.getElementById("phase-4").style.display = "none";
+		}
+		function hideIntro() {
+			document.getElementById("intro").style.display = "none";
+		}
+	</script>
+	
+		
+	<div class="page-holder">
+
+		<div class="phase-1 phase" id="phase-1">
+			<h2>Phase 1</h2>
+			<img class="map-image" src="zul-all-1.png">
+		</div>
+		<div class="phase-2 phase" id="phase-2">
+			<h2>Phase 2 Possibilities (Click One)</h2>
+			<img class="map-image clickable" src="zul-oneandtwo-2.png" onclick="oneOrTwo();">
+			<img class="map-image clickable" src="zul-three-2.png" onclick="three();">
+			<img class="map-image clickable" src="zul-four-2.png" onclick="four();">
+		</div>
+		<div class="phase-3 phase" id="phase-3" style="display: none">
+			<h2>Phase 3</h2>
+			<img class="map-image" src="zul-oneandtwo-3.png">
+		</div>
+		<div class="phase-4 phase" id="phase-4" style="display: none">
+			<h2>Phase 4 Possibilities (Click One)</h2>
+			<img class="map-image clickable" src="zul-range-top.png" onclick="one();">
+			<img class="map-image clickable" src="zul-range-right.png" onclick="two();">
+		</div>
+		<div class="pattern phase" id="pattern-1" style="display: none">
+			<h2>Pattern 1</h2>
+			<img class="map-image" src="zul-all-1.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-oneandtwo-2.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-oneandtwo-3.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-range-top.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-melee-mid2.png">
+			<img class="map-image" src="zul-mage-right.png">
+			<img class="map-image" src="zul-range-top2.png">
+			<img class="map-image" src="zul-mage-top.png">
+			<img class="map-image" src="zul-range-mage.png">
+			<img class="map-image" src="zul-oneandtwo-2.png">
+		</div>
+		<div class="pattern phase" id="pattern-2" style="display: none">
+			<h2>Pattern 2</h2>
+			<img class="map-image" src="zul-all-1.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-oneandtwo-2.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-oneandtwo-3.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-range-right.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-mage-top.png">
+			<img class="map-image" src="zul-melee-mid2.png">
+			<img class="map-image" src="zul-range-left.png">
+			<img class="map-image" src="zul-mage-top.png">
+			<img class="map-image" src="zul-range-mage.png">
+			<img class="map-image" src="zul-oneandtwo-2.png">
+		</div>
+		<div class="pattern phase" id="pattern-3" style="display: none">
+			<h2>Pattern 3</h2>
+			<img class="map-image" src="zul-all-1.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-three-2.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-three-3.png">
+			<img class="map-image" src="zul-mage-right.png">
+			<img class="map-image" src="zul-range-top2.png">
+			<img class="map-image" src="zul-three-6.png">
+			<img class="map-image" src="zul-all-1.png">
+			<img class="map-image" src="zul-range-right.png">
+			<img class="map-image" src="zul-oneandtwo-3.png">
+			<img class="map-image" src="zul-mage-range.png">
+			<img class="map-image" src="zul-oneandtwo-3.png">
+		</div>
+		<div class="pattern phase" id="pattern-4" style="display: none">
+			<h2>Pattern 4</h2>
+			<img class="map-image" src="zul-all-1.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-four-2.png" style="background-color: rgb(150,150,150);">
+			<img class="map-image" src="zul-range-top.png">
+			<img class="map-image" src="zul-mage-right.png">
+			<img class="map-image" src="zul-melee-mid.png">
+			<img class="map-image" src="zul-range-left.png">
+			<img class="map-image" src="zul-range-top2.png">
+			<img class="map-image" src="zul-mage-right.png">
+			<img class="map-image" src="zul-all-1.png">
+			<img class="map-image" src="zul-oneandtwo-3.png">
+			<img class="map-image" src="zul-mage-range.png">
+			<img class="map-image" src="zul-oneandtwo-3.png">
+		</div>
+		<div class="reset-link" onclick="reset();">
+			<h3>Reset</h3>
+		</div>
+
+		<!--all credit to JonTarg for coding this guide-->
+</head>
+</html>
